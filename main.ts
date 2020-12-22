@@ -5,11 +5,10 @@ namespace ultrasonicsensor {
      * Send a ping and get the echo time (in microseconds) as a result
      * @param trig tigger pin
      * @param echo echo pin
-     * @param unit desired conversion unit
-     * @param maxCmDistance maximum distance in centimeters (default is 100)
+     * @param maxCmDistance maximum distance in centimeters
      */
-    //% blockId=sonar_ping block="ping trig %trig|echo %echo"
-    export function ping(trig: DigitalPin, echo: DigitalPin,  maxCmDistance = 100): number {
+    //% blockId=sonar_ping block="ping trig %trig|echo %echo,maxCmDistance %maxCmDistance"
+    export function ping(trig: DigitalPin, echo: DigitalPin,  maxCmDistance: number): number {
         // send pulse
         pins.setPull(trig, PinPullMode.PullNone);
         pins.digitalWritePin(trig, 0);
